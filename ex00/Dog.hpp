@@ -1,17 +1,15 @@
-#ifndef Dog_HPP
-# define Dog_HPP
+#ifndef __Dog_HPP__
+# define __Dog_HPP__
 
 # include "Animal.hpp"
 
 class Dog : public Animal
 {
-  private:
-	/* data */
   public:
-	Dog(/* args*/);
+	Dog(void);
 	Dog(const Dog &original);
 	Dog &operator=(const Dog &original);
 	~Dog();
 };
 
-#endif "
+#endif /*__DOG_HPP */

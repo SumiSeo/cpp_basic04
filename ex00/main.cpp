@@ -15,5 +15,5 @@ int	main(void)
 	delete meta;
 	delete j;
 	delete i;
-	return 0
+	return (0);
 };

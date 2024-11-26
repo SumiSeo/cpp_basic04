@@ -4,12 +4,8 @@
 # include "Animal.hpp"
 class Cat : public Animal
 {
-  private:
-	/* data */
-  protected:
-	/* data */
   public:
-	Cat(/* args*/);
+	Cat(void);
 	Cat(const Cat &original);
 	Cat &operator=(const Cat &original);
 	~Cat();
