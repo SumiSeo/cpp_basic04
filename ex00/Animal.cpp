@@ -21,16 +21,11 @@ Animal &Animal::operator=(const Animal &original)
 };
 Animal::~Animal()
 {
-	std::cout << "Animal desstructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 };
 void Animal::makeSound(void) const
 {
-	if (this->type == "Dog")
-		std::cout << " >_< " << std::endl;
-	else if (this->type == "Cat")
-		std::cout << " -_- " << std::endl;
-	else
-		std::cout << " o_o " << std::endl;
+	std::cout << " Animal say nothing " << std::endl;
 };
 std::string Animal::getType(void) const
 {
