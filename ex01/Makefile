@@ -1,6 +1,6 @@
-NAME = 
+NAME = brain
 
-SRC = main.cpp  
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
