@@ -10,8 +10,8 @@ CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
 RM = rm -rf
 
-
 all : $(NAME)
+
 .cpp.o :
 	   $(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 $(NAME) : $(OBJ)

@@ -13,7 +13,7 @@ Ice::Ice(std::string const &type)
 }
 AMateria *Ice::clone(void) const
 {
-	return (NULL);
+	return (new Ice());
 };
 void Ice::use(ICharacter &target)
 {

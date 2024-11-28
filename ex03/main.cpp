@@ -10,24 +10,14 @@ int	main(void)
 	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-
-	//
-	std::cout << "" << std::endl;
-	std::cout << "" << std::endl;
-	std::cout << "" << std::endl;
-
 	ICharacter *me = new Character("me");
+	std::cout << "CHEC" << std::endl;
 	AMateria *tmp;
 	tmp = src->createMateria("ice");
+	std::cout << "tmp check" << tmp->getType() << std::endl;
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-
-	//
-	std::cout << "" << std::endl;
-	std::cout << "" << std::endl;
-	std::cout << "" << std::endl;
-
 	ICharacter *bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);

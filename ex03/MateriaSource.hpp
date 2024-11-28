@@ -10,12 +10,11 @@
 class MateriaSource : public IMateriaSource
 {
   private:
-	AMateria *Materias[4];
-	int i;
+	AMateria *inventory[4];
 
-  protected:
   public:
 	MateriaSource(void);
+	MateriaSource(AMateria *m);
 	MateriaSource(const MateriaSource &original);
 	MateriaSource &operator=(const MateriaSource &original);
 	void learnMateria(AMateria *);

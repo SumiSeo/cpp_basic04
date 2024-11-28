@@ -3,7 +3,8 @@
 Character::Character(std::string name)
 {
 	this->name = name;
-	this->i = 0;
+	for (int i = 0; i < 4; ++i)
+		inventory[i] = NULL;
 	std::cout << "Character constructed" << std::endl;
 };
 
@@ -19,6 +20,8 @@ Character &Character::operator=(const Character &obj)
 };
 Character::~Character(void)
 {
+	for (int i = 0; i < 4; ++i)
+		delete inventory[i];
 	std::cout << "Character destructed" << std::endl;
 };
 std::string const &Character::getName() const
@@ -27,23 +30,41 @@ std::string const &Character::getName() const
 };
 void Character::equip(AMateria *m)
 {
-	std::cout << "TYPE " << m->getType() << std::endl;
-	inventory[this->i] = m;
-	this->i++;
+	if (!m)
+		return ;
+	int i;
+	for (i = 0; i < 4 && inventory[i] != NULL; ++i)
+	{
+		if (inventory[i] == m)
+		{
+			std::cout << "Cannot equip the same instance of an object twice" << std::endl;
+			return ;
+		}
+	}
+	if (i == 4)
+		std::cout << "no more inventroy" << std::endl;
+	else
+		inventory[i] = m;
 };
 void Character::unequip(int idx)
 {
-	(void)idx;
+	if (idx < 0 || idx > 3)
+		std::cout << "Invalid index" << std::endl;
+	else if (inventory[idx] == NULL)
+		std::cout << "no item hiere";
+	else
+	{
+		std::cout << "no inventroy name" << std::endl;
+		inventory[idx] = NULL;
+	}
 };
 void Character::use(int idx, ICharacter &target)
 {
-	(void)idx;
-	(void)target;
-	std::string ice = "ice";
-	AMateria *mat = getInventory(idx);
-
-	if (mat->getType() == "ice")
-		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	if (idx < 0 || idx > 3)
+		std::cout << "Invalid index" << std::endl;
+	else if (inventory[idx] == NULL)
+		std::cout << "no item here" << std::endl;
+	inventory[idx]->use(target);
 };
 AMateria *Character::getInventory(int idx) const
 {

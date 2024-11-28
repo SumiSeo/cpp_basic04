@@ -17,6 +17,9 @@ int	main(void)
 			hordes[index] = new Cat();
 	}
 
+	std::cout << std::endl;
+	std::cout << std::endl;
+
 	for (int j = 0; j < num; j++)
 		delete hordes[j];
 	return (0);
