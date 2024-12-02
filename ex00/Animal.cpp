@@ -25,7 +25,7 @@ Animal::~Animal()
 };
 void Animal::makeSound(void) const
 {
-	std::cout << " Animal say nothing " << std::endl;
+	std::cout << "Animal Animal" << std::endl;
 };
 std::string Animal::getType(void) const
 {

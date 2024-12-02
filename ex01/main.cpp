@@ -3,10 +3,7 @@
 
 int	main(void)
 {
-	// const Animal *j = new Dog();
-	// const Animal *i = new Cat();
-
-	int num = 10;
+	int num = 5;
 	const Animal *hordes[num];
 
 	for (int index = 0; index < num; index++)

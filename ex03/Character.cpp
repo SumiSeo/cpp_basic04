@@ -34,9 +34,7 @@ void Character::equip(AMateria *m)
 	for (i = 0; i < 4 && inventory[i] != NULL; ++i)
 	{
 		if (inventory[i] == m)
-		{
 			return ;
-		}
 	}
 	if (i == 4)
 		std::cout << "no more inventroy" << std::endl;

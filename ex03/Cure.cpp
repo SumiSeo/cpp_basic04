@@ -11,7 +11,7 @@ Cure::Cure(std::string const &type)
 }
 AMateria *Cure::clone(void) const
 {
-	return (NULL);
+	return (new Cure());
 };
 void Cure::use(ICharacter &target)
 {
