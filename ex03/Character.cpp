@@ -5,7 +5,6 @@ Character::Character(std::string name)
 	this->name = name;
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = NULL;
-	std::cout << "Character constructed" << std::endl;
 };
 
 Character::Character(const Character &obj)
@@ -22,7 +21,6 @@ Character::~Character(void)
 {
 	for (int i = 0; i < 4; ++i)
 		delete inventory[i];
-	std::cout << "Character destructed" << std::endl;
 };
 std::string const &Character::getName() const
 {
@@ -37,7 +35,6 @@ void Character::equip(AMateria *m)
 	{
 		if (inventory[i] == m)
 		{
-			std::cout << "Cannot equip the same instance of an object twice" << std::endl;
 			return ;
 		}
 	}

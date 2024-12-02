@@ -3,12 +3,10 @@
 Ice::Ice(void)
 {
 	this->type = "ice";
-	std::cout << "Ice cube constructed" << std::endl;
 }
 
 Ice::Ice(std::string const &type)
 {
-	std::cout << "Ice cube constructed" << std::endl;
 	this->type = type;
 }
 AMateria *Ice::clone(void) const
@@ -17,8 +15,7 @@ AMateria *Ice::clone(void) const
 };
 void Ice::use(ICharacter &target)
 {
-	(void)target;
-	return ;
+	std::cout << "* shoots an ice bolat at " << target.getName() << " *" << std::endl;
 };
 Ice &Ice::operator=(const Ice &original)
 {
@@ -29,5 +26,4 @@ Ice &Ice::operator=(const Ice &original)
 
 Ice::~Ice()
 {
-	std::cout << "ice descrutor called" << std::endl;
 }

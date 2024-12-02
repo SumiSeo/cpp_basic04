@@ -3,12 +3,10 @@
 Cure::Cure(void)
 {
 	this->type = "cure";
-	std::cout << "Cure cube constructed" << std::endl;
 }
 
 Cure::Cure(std::string const &type)
 {
-	std::cout << "TypeEE" << type << std::endl;
 	this->type = type;
 }
 AMateria *Cure::clone(void) const
@@ -17,8 +15,7 @@ AMateria *Cure::clone(void) const
 };
 void Cure::use(ICharacter &target)
 {
-	(void)target;
-	return ;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 };
 Cure &Cure::operator=(const Cure &original)
 {
@@ -29,5 +26,4 @@ Cure &Cure::operator=(const Cure &original)
 
 Cure::~Cure()
 {
-	std::cout << "cure descrutor called" << std::endl;
 }
